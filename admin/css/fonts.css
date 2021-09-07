@@ -1,0 +1,9 @@
+/*Font file*/
+@font-face {
+	font-family: 'Comfortaa';
+	src: url('../fonts/Comfortaa.ttf') format("opentype");
+}
+
+html,body{
+	font-family: 'Comfortaa';
+}

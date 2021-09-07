@@ -1,0 +1,224 @@
+/*
+*
+*
+1 -	 GENERAL
+*
+*/
+@font-face {
+	font-family: 'Raleway';
+	src: url('../fonts/Raleway.ttf') format("opentype");
+}
+
+html,body{
+	font-family: 'Raleway';
+}
+
+body{
+	background-color: #fdfdfa;
+}
+
+
+.form-control{
+	border-radius: 0px;
+}
+
+.form-group *{
+	border-radius: 0px;
+}
+
+#slider{
+	margin-top: -20px;	
+}
+
+#slider .item{
+	background-size: cover;
+	height: 450px;
+	overflow-y: hidden;
+	background-position: center;
+}
+
+/*.carousel-caption{
+	color: #FE7856;
+}*/
+
+.gallery{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.gallery li{
+	display: inline-block;
+	width: 33%;	
+	height: 150px;
+	overflow-y: hidden;
+	cursor: pointer;
+}
+
+/*
+*
+2 - NAVIGATION
+*
+*/
+
+
+.navbar{	
+	min-height: 90px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	font-family: Tahoma;
+}
+
+.navbar-default{
+	background-color: #fff;
+	border-radius: 0;
+	border-bottom: #333 solid 5px;
+	border-top-color: transparent;
+}
+
+.navbar-default .navbar-nav > li > a{
+	text-transform: uppercase;	
+	color: #333;
+	font-weight: bold;
+}
+
+.navbar-default .navbar-nav > li > a:hover{
+	color: #999;
+}
+
+.navbar-right{
+	padding-right: 50px;
+}
+
+.logo{
+	margin-top: -20px;
+}
+
+.developer-box{
+	border: #DA7944 solid 1px;
+	margin-bottom: 10px;
+}
+
+.developer-img{
+	height: 250px;
+	background-position: center;
+	background-size: cover;
+}
+
+.developer-info{
+	padding: 10px;
+	background-color: #fff;
+	font-weight: bold;
+	color: #DA7944;
+	text-align: center;
+}
+
+.bg,.bg-overlay{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;	
+}
+
+.bg{
+	z-index: -2;
+}
+
+.bg-overlay{
+	z-index: -1;
+	background-image: url(../img/bg_bg.png);
+}
+
+.credit-card{
+	box-shadow: #E0E0E0 0 0 4px;
+	padding: 10px 20px;
+	border-radius: 4px;
+	border: #E0E0E0 solid 2px;
+}
+
+.success-input{
+	border: #0c9 solid 1px;
+}
+
+.error-input{
+	border: #DA3344 solid 1px;
+}
+
+#intro-home{	
+	color: #fff;
+	/*background-position: center;
+	background-size: cover;
+	background-image: url(../img/bg-aside2.jpg);*/
+	background-color: #000;
+
+}
+
+#how{
+	/*background-position: center;
+	background-size: cover;
+	background-image: url(../img/cc.jpg);
+	color: #fff;*/
+}
+
+
+
+#intro-home h3, #how h3, #legality h3{
+	font-size: 2em;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+#intro-home p, #how p, #legality p{
+	font-size: 1.1em;
+}
+
+#legality{
+	background-color: #9D0304;
+	color: #fff;
+}
+
+/*
+*
+*
+*	3	FOOTER
+* 
+*/
+
+#footer{
+	color: #fdfdfa;
+	background-color: #DA7944;
+	text-align: center;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	margin-top: 40px;
+}
+
+
+.main-bg{
+	/*background-color: #D0D0D0;*/
+	background-color: rgba(0,0,0,0.4);
+	padding: 20px;
+	margin-bottom: 25px;
+}
+
+.inner-bg{
+	/*background-color: #fff;*/
+	background-color: rgba(255,255,255,0.5);
+	border: #000 solid 1px;
+	padding: 10px;
+}
+
+.separator{
+	border-bottom: #333 dotted 1px;
+}
+
+.link{
+	color: #fff;
+	font-weight: bold;
+}
+
+.link:hover{
+	color: #ddd;
+	text-decoration: none;
+}

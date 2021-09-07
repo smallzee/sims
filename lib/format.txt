@@ -1,0 +1,11 @@
+$('#popupDatepicker').datepick({
+			dateFormat: 'dd-M-yyyy',
+			minDate: new Date()
+		});	
+
+
+<script type="text/javascript" src="lib/datepicker/jquery.plugin.min.js"></script>
+<script type="text/javascript" src="lib/datepicker/jquery.datepick.min.js"></script>
+
+
+	<link rel="stylesheet" type="text/css" href="lib/datepicker/jquery.datepick.css">
