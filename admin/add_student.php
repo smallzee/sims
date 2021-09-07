@@ -37,7 +37,7 @@ if (isset($_POST['add'])){
     $kphone = $_POST['kphone'];
     $kaddress = $_POST['kaddress'];
 
-    $sql = $db->query("SELECT * FROM student WHERE matric='$matric'");
+    $sql = $db->query("SELECT * FROM students WHERE matric='$matric'");
     if ($sql->rowCount() >= 1){
         $error[] = "Matric number is already exist";
     }
@@ -56,7 +56,9 @@ if (isset($_POST['add'])){
 
         if (move_uploaded_file($file['tmp_name'],$destination)){
 
-            $db->query("INSERT INTO students(matric,password,name,gender,email,date_reg,matric_year,faculty,department,program,admission,level,address,guardian_name,kin_name,kin_address,kin_phone,guardian_phone,status,passport)VALUES ('$matric','$password','$fname','$gender','$email','$date_reg','$matric_year','$faculty','$department','$program','$admission','$level','$address','$gname','$kname','$kaddress','$kphone','$gphone','1','$passport')");
+            $db->query("INSERT INTO students(matric,password,name,gender,email,date_reg,matric_year,faculty,department,program,admission,level,address,guardian_name,kin_name,kin_address,kin_phone,guardian_phone,status,passport,phone_number)VALUES ('$matric','$password','$fname','$gender','$email','$date_reg','$matric_year','$faculty','$department','$program','$admission','$level','$address','$gname','$kname','$kaddress','$kphone','$gphone','1','$passport','$phone_number')");
+
+            set_flash("Student record has been added successfully","info");
         }
 
     }else{
@@ -90,6 +92,7 @@ include_once 'menu.php';
         <!-- Main content -->
         <section class="content">
 
+            <?php flash(); ?>
             <!-- Default box -->
             <div class="box">
                 <div class="box-header with-border">
@@ -163,7 +166,7 @@ include_once 'menu.php';
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label for="">Department</label>
-                                    <select name="department" required id="" class="form-control">
+                                    <select name="department" required id="" class="form-control  select2_single">
                                         <option value="" disabled selected>Select</option>
                                         <?php
                                             $sql = $db->query("SELECT * FROM department ORDER BY name");
@@ -191,23 +194,27 @@ include_once 'menu.php';
                                 </div>
                             </div>
 
-                            <div class="col-sm-6">
+                            <div class="col-sm-12">
                                 <div class="form-group">
                                     <label for="">Level</label>
-                                    <select name="level" required id="" class="form-control">
+                                    <select name="level" required id="" class="form-control select2_single">
                                         <option value="" disabled selected>Select</option>
-                                        <?php
-                                        foreach (array('nd 1 ft','nd 2 ft','nd 1 dpt','nd 2 dpt','nd rpt yr1','nd rpt yr2','nd rpt yr3','hnd 1 ft','hnd 2 ft','hnd 1 dpt','hnd 2 dpt') as $value){
-                                            ?>
-                                            <option value="<?= strtoupper($value) ?>"><?= strtoupper($value) ?></option>
-                                            <?php
-                                        }
-                                        ?>
+                                        <option value="ND 1 FT">ND 1 FT</option>
+                                        <option value="ND 1 DPT">ND 1 DPT</option>
+                                        <option value="ND 1 PT">PT YR 1</option>
+                                        <option value="ND 2 PT">PT YR 2</option>
+                                        <option value="ND 2 FT">ND 2 FT</option>
+                                        <option value="ND 2 DPT">ND 2 DPT</option>
+                                        <option value="ND 3 PT">PT YR 3</option>
+                                        <option value="HND 1 FT">HND 1 FT</option>
+                                        <option value="HND 1 DPT">HND 1 DPT</option>
+                                        <option value="HND 2 FT">HND 1 FT</option>
+                                        <option value="HND 2 DPT">HND 2 DPT</option>
                                     </select>
                                 </div>
                             </div>
 
-                            <div class="col-sm-6">
+                            <div class="col-sm-12">
                                 <div class="form-group">
                                     <label for="">Address</label>
                                     <textarea name="address" class="form-control" required placeholder="Address" id=""></textarea>

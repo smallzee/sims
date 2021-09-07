@@ -45,7 +45,8 @@
                         <td><?php echo ++$sn;?></td>
                         <td><?php echo $rs['code'];?></td>
                         <td><?php echo $rs['title'];?></td>
-                        <td><?php echo $rs['level'];?></td>
+                        <td><?php echo $rs['unit'];?></td>
+                        <td><?= $rs['level'] ?></td>
                         <td><?php echo $rs['semester'];?></td>
                         <td><?php echo dept($rs['department']);?></td>
                         <td>
